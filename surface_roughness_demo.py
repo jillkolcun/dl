@@ -32,7 +32,7 @@ except Exception as e:
 
 
 # ---------- 1. 载入 / 生成表面数据 ----------
-def load_or_synth(path=None):
+def load_or_sh(path=None):
     """载入真实表面图；若未提供路径，生成一张仿真加工表面。"""
     if path:
         print(f"\n载入表面图: {path}")
