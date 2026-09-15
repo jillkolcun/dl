@@ -16,3 +16,20 @@ tmp/
 *.zip
 .env
 
+#应该纳入 Git（源文件 / 真相来源）
+#源代码：.py .js .ts .java .cpp 等（你 dl 里的 surface_roughness_demo.py 就属此类）
+#项目配置：requirements.txt、pyproject.toml、package.json、.gitignore 本身
+#依赖锁文件：package-lock.json、yarn.lock、poetry.lock（保证别人装的版本和你一致）
+#文档与说明：README.md、设计文档、示例数据说明
+#构建/部署脚本：Dockerfile、CI 配置（.github/workflows/）
+#测试代码：tests/ 下的用例
+#❌ 一定不纳入（可丢弃 / 可重生 / 含机密）
+#类别	例子
+#机密 / 密钥	.env（含 API Key）、credentials.json、*.pem 私钥
+#依赖库	node_modules/、venv/、.venv/、__pycache__/、*.pyc
+#构建产物	dist/ build/ target/ *.o *.class、打包后的 exe
+#IDE / 编辑器配置	.idea/（PyCharm）、.vscode/（多数情况忽略）
+#系统垃圾文件	.DS_Store(mac)、Thumbs.db(win)、desktop.ini
+#日志 / 临时文件	*.log、tmp/、缓存目录
+#超大且频繁变的二进制	几十 MB 的视频/设计源文件（建议用 Git LFS 或外链）
+#经验法则：凡是能由"源代码 + 命令"重新生成的，都不该进 Git；凡是手写的、独一无二的，才进。
